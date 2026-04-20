@@ -1,0 +1,81 @@
+{
+  "database": {
+    "path": "fas.db"
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "fas.log"
+  },
+  "folders": [
+    {
+      "name": "invoices",
+      "watch": {
+        "path": "C:\\Uploads\\Invoices",
+        "depth": 1,
+        "extensions": [".pdf", ".xml"]
+      },
+      "upload": {
+        "type": "ftp",
+        "ftp": {
+          "host": "ftp.example.com",
+          "port": 21,
+          "user": "ftpuser",
+          "password": "secret"
+        }
+      },
+      "metadata": {
+        "usercode": "INV001",
+        "folder_id": "10",
+        "environment": "production"
+      },
+      "retry": {
+        "interval_seconds": 60,
+        "max_attempts": 5
+      }
+    },
+    {
+      "name": "reports",
+      "watch": {
+        "path": "C:\\Uploads\\Reports",
+        "depth": 2,
+        "extensions": [".pdf", ".docx", ".xlsx"]
+      },
+      "upload": {
+        "type": "api",
+        "endpoint": "https://api.example.com/files/upload"
+      },
+      "metadata": {
+        "usercode": "RPT002",
+        "department": "finance"
+      },
+      "retry": {
+        "interval_seconds": 120,
+        "max_attempts": 3
+      }
+    },
+    {
+      "name": "images",
+      "watch": {
+        "path": "C:\\Uploads\\Images",
+        "depth": 3,
+        "extensions": null
+      },
+      "upload": {
+        "type": "ftp",
+        "ftp": {
+          "host": "ftp2.example.com",
+          "port": 21,
+          "user": "imguser",
+          "password": "imgpass"
+        }
+      },
+      "metadata": {
+        "usercode": "IMG003"
+      },
+      "retry": {
+        "interval_seconds": 30,
+        "max_attempts": 10
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+# Core (stdlib only — zero mandatory pip deps)
+# Optional: install for better performance
+
+# Filesystem monitoring (event-driven; falls back to polling if absent)
+watchdog>=3.0.0
+
+# HTTP uploads (falls back to urllib if absent)
+requests>=2.28.0
+
+# EXE packaging
+pyinstaller>=6.0.0
